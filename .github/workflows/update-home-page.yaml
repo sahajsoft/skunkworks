@@ -11,10 +11,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Generate Homepage
         run: |
-          echo "# SkunkWorks" > index.md
-          echo "## Projects" >> index.md
-          echo "| Project Name | Description | Status | Contributors | Technology | Tags |" >> index.md
-          echo "|--------------|-------------|--------|--------------|------------|------|" >> index.md
+          echo "# SkunkWorks" > README.md
+          echo "## Projects" >> README.md
+          echo "| Project Name | Description | Status | Contributors | Technology | Tags |" >> README.md
+          echo "|--------------|-------------|--------|--------------|------------|------|" >> README.md
           for file in projects/*.md; do
             if [[ $file == "projects/_template.md" ]]; then
               continue
@@ -34,12 +34,12 @@ jobs:
             else
               status_icon=$status
             fi
-            echo "| [$title]($file) | $description | $status_icon | $contributors | $tech | $tags |" >> index.md
+            echo "| [$title]($file) | $description | $status_icon | $contributors | $tech | $tags |" >> README.md
           done
       - name: Commit changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add index.md
+          git add README.md
           git commit -m "Automatically update homepage with project details and tech stack"
           git push
