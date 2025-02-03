@@ -11,17 +11,27 @@ jobs:
         uses: actions/checkout@v3
       - name: Generate Homepage
         run: |
-          echo "# Skunkwork Projects Showcase" > index.md
+          echo "# Hobby Projects Showcase" > index.md
           echo "## Projects" >> index.md
           for file in projects/*.md; do
             title=$(grep -m 1 '^title:' $file | cut -d '"' -f 2)
+            description=$(grep -m 1 '^description:' $file | cut -d '"' -f 2)
             status=$(grep -m 1 '^status:' $file | cut -d '"' -f 2)
-            echo "- [$title]($file) - **Status: $status**" >> index.md
+            contributors=$(grep '^  - ' $file | cut -d '"' -f 2 | paste -sd ', ' -)
+            thumbnail=$(grep -m 1 '^thumbnail:' $file | cut -d '"' -f 2)
+            echo "### [$title]($file)" >> index.md
+            echo "![Thumbnail]($thumbnail)" >> index.md
+            echo "**Status:** $status" >> index.md
+            echo "**Description:** $description" >> index.md
+            echo "**Contributors:** $contributors" >> index.md
+            echo "" >> index.md
+            echo "---" >> index.md
           done
+          echo "[Add a New Project](https://github.com/[your-username]/hobby-projects/new/main/projects)" >> index.md
       - name: Commit changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add index.md
-          git commit -m "Automatically update homepage"
+          git commit -m "Automatically update homepage with project details"
           git push
