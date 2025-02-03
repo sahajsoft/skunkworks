@@ -1,0 +1,19 @@
+---
+title: "Wealth Wave"
+status: "Completed" # Ongoing, Completed, Abandoned
+contributors:
+  - "Prasanna Anbazhagan"
+  - ""
+video: "https://youtube.com/embed/your-video-id"
+---
+
+## Description
+A brief description of the project.
+
+## Progress Updates
+- 2023-10-01: Started the project.
+- 2023-10-15: Added basic functionality.
+
+## How to Contribute
+- Contact: [Your Email](mailto:example@example.com)
+- Technologies: Flutter, AWS
