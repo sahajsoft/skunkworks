@@ -1,13 +1,12 @@
 # SkunkWorks
 ## Projects
 ### [Wealth Wave](projects/wealthwave.md)
-![Thumbnail](https://via.placeholder.com/150)
 **Status:** Completed
 **Description:** A tool to maintain and track investments.
-**Contributors:** Prasanna Anbazhagan @prasannasahaj,  - Finance   - Tool,https://via.placeholder.com/150 https://via.placeholder.com/150,  - Flutter   - AWS,  - TypeScript
+**Contributors:** Prasanna Anbazhagan @prasannasahaj,  - Finance   - Tool,/assets/wealth_wave_1.png /assets/wealth_wave_2.png,/assets/wealth_wave_3.png /assets/wealth_wave_4.png,  - Flutter   - AWS,  - TypeScript
 **Technology:** Flutter
 **Screenshots:**
-!["https://via.placeholder.com/150"]("https://via.placeholder.com/150")
+!["/assets/wealth_wave_1.png"]("/assets/wealth_wave_1.png")
 **Tags:** Finance
 
 ---
