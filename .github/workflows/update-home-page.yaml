@@ -37,7 +37,6 @@ jobs:
             echo "" >> index.md
             echo "---" >> index.md
           done
-          echo "[Add a New Project](https://github.com/[your-username]/hobby-projects/new/main/projects)" >> index.md
       - name: Commit changes
         run: |
           git config --global user.name "GitHub Actions"

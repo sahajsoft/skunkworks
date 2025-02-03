@@ -8,11 +8,11 @@ tags:
   - Finance
   - Tool
 screenshots:
-  - "/assets/wealth_wave_1.png"
-  - "/assets/wealth_wave_2.png"
-  - "/assets/wealth_wave_3.png"
-  - "/assets/wealth_wave_4.png"
-technology:
+  - "https://raw.githubusercontent.com/sahajsoft/skunkworks/main/assets/wealth_wave_1.png"
+  - "https://raw.githubusercontent.com/sahajsoft/skunkworks/main/assets/wealth_wave_2.png"
+  - "https://raw.githubusercontent.com/sahajsoft/skunkworks/main/assets/wealth_wave_3.png"
+  - "https://raw.githubusercontent.com/sahajsoft/skunkworks/main/assets/wealth_wave_4.png"
+  technology:
   - Flutter
   - AWS
   - TypeScript
