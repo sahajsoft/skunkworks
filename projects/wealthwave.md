@@ -4,31 +4,18 @@ description: "A tool to maintain and track investments."
 status: "Completed" # Ongoing, Completed, Abandoned
 contributors:
   - "Prasanna Anbazhagan @prasannasahaj"
-thumbnail: "https://via.placeholder.com/150" # Link to a thumbnail image
 tags: 
   - Finance
   - Tool
 screenshots:
-  - "https://via.placeholder.com/150"
-  - "https://via.placeholder.com/150"
+  - "/assets/wealth_wave_1.png"
+  - "/assets/wealth_wave_2.png"
+  - "/assets/wealth_wave_3.png"
+  - "/assets/wealth_wave_4.png"
 technology:
   - Flutter
   - AWS
   - TypeScript
----
-
-## Progress Updates
+progress:
 - 2024-10-01: Added expense tracker.
 - 2024-08-01: Added way to sync the funds value from API.
-
-## How to Contribute
-- Contact: [Your Email](mailto:prasanna@sahaj.ai.com)
-- Tech: Flutter, AWS, TypeScript
-
-## Screenshots
-![Screenshot 1](https://via.placeholder.com/150)
-![Screenshot 2](https://via.placeholder.com/150)
-
-## Tags
-- Finance
-- Tool

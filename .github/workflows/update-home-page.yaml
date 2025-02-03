@@ -22,11 +22,9 @@ jobs:
             status=$(grep -m 1 '^status:' $file | cut -d '"' -f 2)
             contributors=$(grep '^  - ' $file | cut -d '"' -f 2 | paste -sd ', ' -)
             tech=$(grep -A 1 '^technology:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
-            thumbnail=$(grep -m 1 '^thumbnail:' $file | cut -d '"' -f 2)
             screenshots=$(grep -A 1 '^screenshots:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ' ' -)
             tags=$(grep -A 1 '^tags:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
             echo "### [$title]($file)" >> index.md
-            echo "![Thumbnail]($thumbnail)" >> index.md
             echo "**Status:** $status" >> index.md
             echo "**Description:** $description" >> index.md
             echo "**Contributors:** $contributors" >> index.md
