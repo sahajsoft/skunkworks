@@ -31,7 +31,7 @@ jobs:
             echo "**Technology:** $tech" >> index.md
             echo "**Screenshots:**" >> index.md
             for screenshot in $screenshots; do
-              echo "![$screenshot]($screenshot)" >> index.md
+              echo "![]($screenshot)" >> index.md
             done
             echo "**Tags:** $tags" >> index.md
             echo "" >> index.md
