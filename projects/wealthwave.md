@@ -5,6 +5,16 @@ status: "Completed" # Ongoing, Completed, Abandoned
 contributors:
   - "Prasanna Anbazhagan @prasannasahaj"
 thumbnail: "https://via.placeholder.com/150" # Link to a thumbnail image
+tags: 
+  - Finance
+  - Tool
+screenshots:
+  - "https://via.placeholder.com/150"
+  - "https://via.placeholder.com/150"
+technology:
+  - Flutter
+  - AWS
+  - TypeScript
 ---
 
 ## Progress Updates
@@ -13,4 +23,12 @@ thumbnail: "https://via.placeholder.com/150" # Link to a thumbnail image
 
 ## How to Contribute
 - Contact: [Your Email](mailto:prasanna@sahaj.ai.com)
-- Tech: Flutter, AWS, TS
+- Tech: Flutter, AWS, TypeScript
+
+## Screenshots
+![Screenshot 1](https://via.placeholder.com/150)
+![Screenshot 2](https://via.placeholder.com/150)
+
+## Tags
+- Finance
+- Tool
