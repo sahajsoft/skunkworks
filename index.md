@@ -1,5 +1,3 @@
-# Skunkwork Projects
-
+# Skunkwork Projects Showcase
 ## Projects
-- [Cool Robot](projects/cool-robot.md) - **Status: Ongoing**
-- [Weather App](projects/weather-app.md) - **Status: Completed**
+- [Project Name](projects/_template.md) - **Status: Ongoing**
