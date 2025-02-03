@@ -25,7 +25,16 @@ jobs:
             contributors=$(grep '^  - ' $file | cut -d '"' -f 2 | paste -sd ', ' -)
             tech=$(grep -A 1 '^technology:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
             tags=$(grep -A 1 '^tags:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
-            echo "| [$title]($file) | $description | $status | $contributors | $tech | $tags |" >> index.md
+            if [[ $status == "Completed" ]]; then
+              status_icon="✅"
+            elif [[ $status == "Ongoing" ]]; then
+              status_icon="🟡"
+            elif [[ $status == "Abandoned" ]]; then
+              status_icon="❌"
+            else
+              status_icon=$status
+            fi
+            echo "| [$title]($file) | $description | $status_icon | $contributors | $tech | $tags |" >> index.md
           done
           echo "[Add a New Project](https://github.com/[your-username]/hobby-projects/new/main/projects)" >> index.md
       - name: Commit changes
