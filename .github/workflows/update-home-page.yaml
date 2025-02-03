@@ -22,9 +22,9 @@ jobs:
             title=$(grep -m 1 '^title:' $file | cut -d '"' -f 2)
             description=$(grep -m 1 '^description:' $file | cut -d '"' -f 2)
             status=$(grep -m 1 '^status:' $file | cut -d '"' -f 2)
-            contributors=$(grep '^  - ' $file | cut -d '"' -f 2 | paste -sd ', ' -)
-            tech=$(grep -A 1 '^technology:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
-            tags=$(grep -A 1 '^tags:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
+            contributors=$(grep -A 1 '^contributors:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd '<br>' -)
+            tech=$(grep -A 1 '^technology:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd '<br>' -)
+            tags=$(grep -A 1 '^tags:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd '<br>' -)
             if [[ $status == "Completed" ]]; then
               status_icon="✅"
             elif [[ $status == "Ongoing" ]]; then
