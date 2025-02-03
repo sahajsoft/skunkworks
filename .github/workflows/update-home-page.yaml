@@ -13,6 +13,8 @@ jobs:
         run: |
           echo "# SkunkWorks" > index.md
           echo "## Projects" >> index.md
+          echo "| Project Name | Description | Status | Contributors | Technology | Screenshots | Tags |" >> index.md
+          echo "|--------------|-------------|--------|--------------|------------|-------------|------|" >> index.md
           for file in projects/*.md; do
             if [[ $file == "projects/_template.md" ]]; then
               continue
@@ -24,18 +26,8 @@ jobs:
             tech=$(grep -A 1 '^technology:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
             screenshots=$(grep -A 1 '^screenshots:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ' ' -)
             tags=$(grep -A 1 '^tags:' $file | tail -n +2 | grep -v '^---' | sed 's/  - //g' | paste -sd ', ' -)
-            echo "### [$title]($file)" >> index.md
-            echo "**Status:** $status" >> index.md
-            echo "**Description:** $description" >> index.md
-            echo "**Contributors:** $contributors" >> index.md
-            echo "**Technology:** $tech" >> index.md
-            echo "**Screenshots:**" >> index.md
-            for screenshot in $screenshots; do
-              echo "![]($screenshot)" >> index.md
-            done
-            echo "**Tags:** $tags" >> index.md
-            echo "" >> index.md
-            echo "---" >> index.md
+            screenshots_md=$(echo $screenshots | sed 's/ /<br>![](/g' | sed 's/^/![](/' | sed 's/$/)/')
+            echo "| [$title]($file) | $description | $status | $contributors | $tech | $screenshots_md | $tags |" >> index.md
           done
       - name: Commit changes
         run: |
